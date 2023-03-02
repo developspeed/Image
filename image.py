@@ -69,7 +69,7 @@ if key == auth[1]["secretKey"]:
     image_file = st.file_uploader("Choose File")
     if image_file is not None:
         st.subheader("Before")
-        st.image(image_file)
+        st.image(image_file,width=600)
 
     st.write("___________________________________________________________________________________________________________________________")
 
@@ -82,7 +82,7 @@ if key == auth[1]["secretKey"]:
     picture = st.camera_input("Take a picture of yourself", disabled=valueTake)
     if picture is not None:
         st.subheader("Before")
-        st.image(picture)
+        st.image(picture,width=600)
 
     ################## Backend Logic of the Application #####################
 
@@ -158,7 +158,7 @@ if key == auth[1]["secretKey"]:
                 
                 # Output
                 st.subheader("After")
-                st.image(output,width=300,use_column_width=True)
+                st.image(output,width=600)
 
                 # Downloading image
                 st.markdown("Click on the below link to Download")
@@ -217,7 +217,7 @@ if key == auth[1]["secretKey"]:
                 # Output
             
                 st.subheader("After")
-                st.image(output,width=300,use_column_width=True)
+                st.image(output,width=600)
 
                 # Downloading image
                 st.markdown("Click on the below link to Download")
