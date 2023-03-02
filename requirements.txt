@@ -1,0 +1,4 @@
+audio_recorder_streamlit==0.0.8
+deta==1.1.0
+replicate==0.4.0
+streamlit==1.18.1
