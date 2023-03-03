@@ -156,13 +156,12 @@ if key == auth[1]["secretKey"]:
             try:
                 output = version.predict(**inputs)
                 
-                # Output
+                # Output and Downloading image
                 st.subheader("After")
-                st.image(output,width=600)
-
-                # Downloading image
-                st.markdown("Click on the below link to Download")
-                st.write(output[0])
+                for image in output:
+                    st.image(image,width=500)
+                    st.markdown("Click on the below link to Download")
+                    st.write(image)
 
             except Exception:
                 st.error("There could be some problems with API or use images with single person")
@@ -214,14 +213,12 @@ if key == auth[1]["secretKey"]:
                 # https://replicate.com/timothybrooks/instruct-pix2pix/versions/30c1d0b916a6f8efce20493f5d61ee27491ab2a60437c13c588468b9810ec23f#output-schema
                 output = version.predict(**inputs)
             
-                # Output
-            
+                # Output and Downloading image
                 st.subheader("After")
-                st.image(output,width=600)
-
-                # Downloading image
-                st.markdown("Click on the below link to Download")
-                st.write(output[0])
+                for image in output:
+                    st.image(image,width=500)
+                    st.markdown("Click on the below link to Download")
+                    st.write(image)
             
             except Exception:
                 st.error("There could be some problems with API or use images with single person")
