@@ -8,7 +8,7 @@ st.set_page_config(
     # page_icon=im,
     layout="wide",
 )
-st.write("Click on > to Login")
+
 hide_menu = """
 <style>
 #MainMenu{
