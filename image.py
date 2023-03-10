@@ -64,6 +64,25 @@ if key == auth[1]["secretKey"]:
     st.sidebar.write("__________________________")
     st.write("______________________________________________________________________________________________________________________")
 
+    # Image resizing tools
+    imageResize = '[Image Resize](https://imageresizer.com/)'
+    cssFix = """
+        <style>
+        a{
+            border-radius:2px;
+            border:1px solid;
+            text-decoration:none;
+            padding:6px;
+            color: black;
+        }
+        a:hover{
+            text-decoration:none;
+            color:red;
+            border:1px solid red;
+        }
+    """
+    st.markdown(imageResize, unsafe_allow_html=True)
+    st.markdown(cssFix, unsafe_allow_html=True)
 
     # Uploading image file
     image_file = st.file_uploader("Choose File")
@@ -228,10 +247,7 @@ elif key == "":
     st.sidebar.warning("Enter Secret Key")
 else:
     st.sidebar.error("Incorrect Secret Key")
-    
 
-# Magic AI dashboard
-st.write("__________________________________________________________________________________________")
 link = '[Magicaibox](https://www.magicaibox.site/controlpanel/udashboard)'
 html = """
     <style>
