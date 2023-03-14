@@ -251,7 +251,7 @@ else:
 
 st.write("________________________________________________________________________")
 
-link = '[Magicaibox](https://www.magicaibox.site/controlpanel/udashboard)'
+link = '[Return to Magicaibox](https://www.magicaibox.site/controlpanel/udashboard)'
 html = """
     <style>
     a{
