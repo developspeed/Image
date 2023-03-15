@@ -165,43 +165,14 @@ if key == auth[1]["secretKey"]:
             inputs = {
                 # An image which will be repainted according to prompt
                 'image': image_file,
-
-                # Prompt to guide the image generation
                 'prompt': prompt,
-
-                # The prompt or prompts not to guide the image generation (what you do
-                # not want to see in the generation). Ignored when not using guidance.
-                # 'negative_prompt': ...,
-
-                # Number of images to output
                 'num_outputs': numOut,
-
-                # The number of denoising steps. More denoising steps usually lead to
-                # a higher quality image at the expense of slower inference.
-                # Range: 1 to 500
                 'num_inference_steps': dataBase[3]["numInf"],
-
-                # Scale for classifier-free guidance. Higher guidance scale encourages
-                # to generate images that are closely linked to the text prompt,
-                # usually at the expense of lower image quality.
-                # Range: 1 to 20
                 'guidance_scale': dataBase[3]['guidance_scale'],
-
-                # Image guidance scale is to push the generated image towards the
-                # inital image. Higher image guidance scale encourages to generate
-                # images that are closely linked to the source image, usually at the
-                # expense of lower image quality.
-                # Minimum: 1
                 'image_guidance_scale': dataBase[3]['image_guidance_scale'],
-
-                # Choose a scheduler.
                 'scheduler': dataBase[3]["scheduler"],
-
-                # Random seed. Leave blank to randomize the seed
                 'seed': dataBase[3]['seed'] ,
             }
-
-            # https://replicate.com/timothybrooks/instruct-pix2pix/versions/30c1d0b916a6f8efce20493f5d61ee27491ab2a60437c13c588468b9810ec23f#output-schema
             try:
                 output = version.predict(**inputs)
                 
@@ -222,44 +193,16 @@ if key == auth[1]["secretKey"]:
             inputs = {
                 # An image which will be repainted according to prompt
                 'image': picture,
-
-                # Prompt to guide the image generation
                 'prompt': prompt,
-
-                # The prompt or prompts not to guide the image generation (what you do
-                # not want to see in the generation). Ignored when not using guidance.
-                # 'negative_prompt': ...,
-
-                # Number of images to output
                 'num_outputs': numOut,
-
-                # The number of denoising steps. More denoising steps usually lead to
-                # a higher quality image at the expense of slower inference.
-                # Range: 1 to 500
                 'num_inference_steps': dataBase[3]["numInf"],
-
-                # Scale for classifier-free guidance. Higher guidance scale encourages
-                # to generate images that are closely linked to the text prompt,
-                # usually at the expense of lower image quality.
-                # Range: 1 to 20
                 'guidance_scale': dataBase[3]['guidance_scale'],
-
-                # Image guidance scale is to push the generated image towards the
-                # inital image. Higher image guidance scale encourages to generate
-                # images that are closely linked to the source image, usually at the
-                # expense of lower image quality.
-                # Minimum: 1
                 'image_guidance_scale': dataBase[3]['image_guidance_scale'],
-
-                # Choose a scheduler.
                 'scheduler': dataBase[3]["scheduler"],
-
-                # Random seed. Leave blank to randomize the seed
                 'seed': dataBase[3]['seed'] ,
             }
 
             try:
-                # https://replicate.com/timothybrooks/instruct-pix2pix/versions/30c1d0b916a6f8efce20493f5d61ee27491ab2a60437c13c588468b9810ec23f#output-schema
                 output = version.predict(**inputs)
             
                 # Output and Downloading image
