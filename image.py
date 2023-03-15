@@ -38,7 +38,37 @@ def getItem():
 ######################### Frontend UI of the Application #########################
 
 # App Title Name
-st.title("Edit Image")
+col1 , col2 , col3 = st.columns(3)
+with col1:
+    st.title("Edit Image")
+
+with col3:
+    st.write("")
+    st.write("")
+    link = '[Return to Magicaibox](https://www.magicaibox.site/controlpanel/udashboard)'
+    html = """
+        <style>
+        a{
+            border-radius:2px;
+            border:1px solid;
+            text-decoration:none;
+            padding:6px;
+            color: black;
+        }
+        a:hover{
+            text-decoration:none;
+            color:red;
+            border:1px solid red;
+        }
+        .css-1fv8s86 e16nr0p34{
+            float: right;
+            margin-top: -55px;
+        }
+    """
+    st.markdown(link, unsafe_allow_html=True)
+    st.markdown(html, unsafe_allow_html=True)
+
+
 
 key = st.sidebar.text_input("Enter the Security Key")
 auth = getItem()
@@ -249,23 +279,4 @@ else:
     st.sidebar.error("Incorrect Secret Key")
 
 
-st.write("________________________________________________________________________")
 
-link = '[Return to Magicaibox](https://www.magicaibox.site/controlpanel/udashboard)'
-html = """
-    <style>
-    a{
-        border-radius:2px;
-        border:1px solid;
-        text-decoration:none;
-        padding:6px;
-        color: black;
-    }
-    a:hover{
-        text-decoration:none;
-        color:red;
-        border:1px solid red;
-    }
-"""
-st.markdown(link, unsafe_allow_html=True)
-st.markdown(html, unsafe_allow_html=True)
