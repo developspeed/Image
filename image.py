@@ -152,6 +152,24 @@ if key == auth[1]["secretKey"]:
     # Negative Prompts
     negPrompt = st.text_input("Enter negative prompt (leave blank if you don't want any)")
 
+    st.subheader("Image Settings")
+
+    # Main parameters
+    dataBase = getItem()
+    numInf = st.slider('Select a range of values',0.0, 500.0, float(dataBase[3]['numInf']))
+    st.markdown("The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference. Range: 1 to 500")
+
+    guidance_scale = st.slider('Select a range of values',0.0, 20.0, float(dataBase[3]['guidance_scale']))
+    st.markdown("Scale for classifier-free guidance. Higher guidance scale encourages to generate images that are closely linked to the text prompt usually at the expense of lower image quality. Range: 1 to 20")
+
+    image_guidance_scale = st.text_input("Image Guidance Scale", value=dataBase[3]['image_guidance_scale'])
+    st.markdown("Image guidance scale is to push the generated image towards the inital image. Higher image guidance scale encourages to generate images that are closely linked to the source image, usually at the expense of lower image quality. Minimum: 1")
+
+    scheduler = st.selectbox("Choose a Scheduler",("K_EULER_ANCESTRAL","DDIM","K_EULER","DPMSolverMultistep","PNDM","KLMS"),key=dataBase[3]['scheduler'])
+
+    seed = st.text_input("Seed",value=dataBase[3]["seed"])
+    st.markdown("Random seed. Leave blank to randomize the seed")
+
     #number of outputs
     numOut = st.selectbox("Enter the Number of Output Images",["1","4"])
 
@@ -159,8 +177,6 @@ if key == auth[1]["secretKey"]:
         if image_file is not None:
         
             st.warning("Working....")
-
-            dataBase = getItem()
 
             inputs = {
                 # An image which will be repainted according to prompt
@@ -189,7 +205,6 @@ if key == auth[1]["secretKey"]:
         if picture is not None:
             st.warning("Working....")
 
-            dataBase = getItem()
             inputs = {
                 # An image which will be repainted according to prompt
                 'image': picture,
@@ -220,6 +235,3 @@ elif key == "":
     st.sidebar.warning("Enter Secret Key")
 else:
     st.sidebar.error("Incorrect Secret Key")
-
-
-
