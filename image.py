@@ -156,10 +156,10 @@ if key == auth[1]["secretKey"]:
 
     # Main parameters
     dataBase = getItem()
-    numInf = st.slider('Select a range of values',0.0, 500.0, float(dataBase[3]['numInf']))
+    numInf = st.slider('Denoising Steps',0.0, 500.0, float(dataBase[3]['numInf']))
     st.markdown("The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference. Range: 1 to 500")
 
-    guidance_scale = st.slider('Select a range of values',0.0, 20.0, float(dataBase[3]['guidance_scale']))
+    guidance_scale = st.slider('Classifier Free Guidance',0.0, 20.0, float(dataBase[3]['guidance_scale']))
     st.markdown("Scale for classifier-free guidance. Higher guidance scale encourages to generate images that are closely linked to the text prompt usually at the expense of lower image quality. Range: 1 to 20")
 
     image_guidance_scale = st.text_input("Image Guidance Scale", value=dataBase[3]['image_guidance_scale'])
