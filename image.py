@@ -183,11 +183,11 @@ if key == auth[1]["secretKey"]:
                 'image': image_file,
                 'prompt': prompt,
                 'num_outputs': numOut,
-                'num_inference_steps': dataBase[3]["numInf"],
-                'guidance_scale': dataBase[3]['guidance_scale'],
-                'image_guidance_scale': dataBase[3]['image_guidance_scale'],
-                'scheduler': dataBase[3]["scheduler"],
-                'seed': dataBase[3]['seed'] ,
+                'num_inference_steps': numInf,
+                'guidance_scale': guidance_scale,
+                'image_guidance_scale': image_guidance_scale,
+                'scheduler': scheduler,
+                'seed': seed,
             }
             try:
                 output = version.predict(**inputs)
@@ -210,11 +210,11 @@ if key == auth[1]["secretKey"]:
                 'image': picture,
                 'prompt': prompt,
                 'num_outputs': numOut,
-                'num_inference_steps': dataBase[3]["numInf"],
-                'guidance_scale': dataBase[3]['guidance_scale'],
-                'image_guidance_scale': dataBase[3]['image_guidance_scale'],
-                'scheduler': dataBase[3]["scheduler"],
-                'seed': dataBase[3]['seed'] ,
+                'num_inference_steps': numInf,
+                'guidance_scale': guidance_scale,
+                'image_guidance_scale': image_guidance_scale,
+                'scheduler': scheduler,
+                'seed': seed,
             }
 
             try:
